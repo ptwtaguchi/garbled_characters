@@ -44,13 +44,15 @@ pip install -r requirements.txt
 playwright install
 ```
 
-### ３． Azure Cognitive Servicesのセットアップ
-プロジェクトのルートディレクトリに.envファイルを作成し、以下の内容を記述します。
+### ３． GitHub Secretsの設定
+１． リポジトリのページに移動します。  
+２． Settingsタブをクリックします。  
+３． 左側のメニューからSecrets and variables > Actionsをクリックします。  
+４． New repository secretボタンをクリックします。  
+５． 以下の2つのシークレットを追加します：  
 
-```
-AZURE_SUBSCRIPTION_KEY=your_azure_subscription_key
-AZURE_ENDPOINT=your_azure_endpoint
-```
+- AZURE_SUBSCRIPTION_KEY: あなたのAzureサブスクリプションキー  
+- AZURE_ENDPOINT: あなたのAzureエンドポイント  
 
 ## 使用方法
 ### １． スクリーンショットの取得
