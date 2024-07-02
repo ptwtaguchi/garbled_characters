@@ -24,7 +24,7 @@ def is_valid_text(text):
     文字化けを検出するロジックを実装します。
     日本語の範囲および半角英数字が含まれるかどうかをチェックします。
     """
-    valid_char_pattern = re.compile(r'^[\u0020-\u007E\u3000-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]+$')
+    valid_char_pattern = re.compile(r'^[\u0020-\u0FDA\u2000-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]+$')
     
     # 文字が有効な範囲に含まれているかを確認
     return bool(valid_char_pattern.match(text))
