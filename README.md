@@ -1,5 +1,5 @@
 # Webサイトの文字化けテスト
-このプロジェクトは、Python、Pytest、およびPlaywrightを使用してWebサイトのテストを行い、AzureのAIを利用して文字化けを検出するためのツールです。
+このプロジェクトは、Python、Pytest、およびPlaywrightを使用してWebサイトのテストを行い、AzureのAIを利用してある程度の文字化けを検出するためのツールです。
 
 ## 概要
 １． Playwrightを使用してWebサイトのスクリーンショットを取得します。  
