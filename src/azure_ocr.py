@@ -24,7 +24,7 @@ def is_valid_text(text):
     文字化けを検出するロジックを実装します。
     日本語の範囲および半角英数字が含まれるかどうかをチェックします。
     """
-    valid_char_pattern = re.compile(r'^[\u0020-\u007E\u00A5\u2000-\u24FF\u2470-\u30FF\u4E00-\u9FFF\uFF01-\uFF5E\uFF61-\uFF9F]+$')
+    valid_char_pattern = re.compile(r'^[\u0020-\u007E\u00A5\u2000-\u24FF\u2700-\u30FF\u4E00-\u9FFF\uFF01-\uFF5E\uFF61-\uFF9F]+$')
 
     # 文字が有効な範囲に含まれているかを確認
     return bool(valid_char_pattern.match(text))
@@ -35,7 +35,7 @@ def check_for_garbled_text(ocr_result):
     文字化けが見つかった場合にはその文字を表示し、Trueを返します。
     文字化けがない場合はFalseを返します。
     """
-    garbled_found = False
+    # garbled_found = False
     for region in ocr_result.regions:
         for line in region.lines:
             for word in line.words:
@@ -44,8 +44,10 @@ def check_for_garbled_text(ocr_result):
                 print(f"debug text check: {text} (Unicode: {unicode_points})")
                 if not is_valid_text(text):
                     print(f"Garbled text found: {text} (Unicode: {unicode_points})")
-                    garbled_found = True
-    return garbled_found
+                    # garbled_found = True
+                    return True
+    # return garbled_found
+    return False
 
 # 例: OCRの実行と文字化けチェック
 if __name__ == "__main__":
